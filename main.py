@@ -18,6 +18,7 @@ from users import router as users_router
 async def lifespan(app: FastAPI):
     # Both models (Task and Image) are registered with Base because uploader
     # is imported above — create_all picks them both up.
+    # this code is ai generetédi
     Base.metadata.create_all(bind=engine)
     yield
 
