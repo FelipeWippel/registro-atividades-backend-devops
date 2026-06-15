@@ -16,8 +16,6 @@ from users import router as users_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Both models (Task and Image) are registered with Base because uploader
-    # is imported above — create_all picks them both up.
     Base.metadata.create_all(bind=engine)
     yield
 
